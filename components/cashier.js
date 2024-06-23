@@ -22,7 +22,6 @@ function calculateAverageGrade(studentArray){
     const average = student.grades.reduce((a,b) => a + b, 0) / student.grades.length
     return {...student, average:average.toFixed(2)}
    })
-//   console.log(studentAverage) 
   return studentAverage
     
 }
@@ -31,7 +30,6 @@ calculateAverageGrade(studentInfo)
 function topStudent(studentData){
     let studentInfoWithAverage = calculateAverageGrade(studentData)
     const studentWithHighMark = studentInfoWithAverage.reduce((a,b) => a.average > b.average ? a : b)
-    console.log(studentWithHighMark)
     return studentWithHighMark
 }
 topStudent(studentInfo)
@@ -39,7 +37,6 @@ topStudent(studentInfo)
 function sortStudentByGrade(studentData){
     let studentInfoWithAverage = calculateAverageGrade(studentData) 
     const sortedStudent = studentInfoWithAverage.sort((a,b) => b.average - a.average)
-    // console.log(sortedStudent)
     return sortedStudent
 }
 
